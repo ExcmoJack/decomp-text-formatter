@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root{
+    --bg_grad_1: hsl(154, 46%, 44%);
+    --bg_grad_2: hsl(99, 30%, 69%);
+    --bg_grad_3: hsl(151, 45%, 52%);
+    --bg_grad_4: hsl(149, 58%, 65%);
+    --bg_grad_5: hsl(58, 32%, 55%);
+
+    --hr_grad_1: hsl(155, 51%, 72%);
+    --hr_grad_2: hsl(155, 77%, 27%);
+    --hr_grad_3: hsl(155, 46%, 44%);
+
+    --accent_color: hsl(155, 77%, 27%);
+    --accent_color_20op: hsl(155, 77%, 27%, 0.2);
+
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans";
+    color:black;
+    background: var(--bg_grad_1);
+    background: linear-gradient(90deg, var(--bg_grad_1) 0%, var(--bg_grad_2) 24%, var(--bg_grad_3) 57%, var(--bg_grad_4) 65%, var(--bg_grad_5) 100%); 
+    background-size: cover;
+}
+
+header {
+    padding: 0.2em;
+    background: rgb(147,202,220);
+    background: linear-gradient(180deg, var(--hr_grad_1) 5%, var(--hr_grad_2) 46%, var(--hr_grad_3) 100%);
+    box-shadow: 0 0 5px 5px rgb(0 0 0 / 50%);
+    margin-bottom: 2em;
+}
+
+header h1 {
+    margin: 0 auto;
+    color: azure;
+    font-weight: 400;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    width: 50em;
+    height: 2.5em;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 20px;
+    width: 100%;
+    border-bottom-color: var(--accent_color_20op);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+header .logo {
+    height: 1.2em;
+    background: rgb(228,248,255);
+    background: linear-gradient(180deg, rgba(228,248,255,1) 45%, rgba(116,178,199,1) 50%, rgba(206,233,242,1) 80%); 
+    box-shadow: 1px 3px 3px 3px rgb(0 0 0 / 30%),
+                inset 1px 3px 3px 3px rgba(255, 255, 255, 0.5);
+    padding: 0.3em;
+    margin-right: 0.5em;
+    border-radius: 8em;
+}
+
+main {
+    width: 50em;
+    margin: 0 auto 5em;
+    flex-grow: 1;
+}
+
+section {
+    border: 0px solid rgba(100, 100, 100, 1);
+    border-radius: 4px;
+    background: linear-gradient(
+      50deg,
+      rgba(255, 255, 255, 0.5) 12%,
+      rgba(255, 255, 255, 0.3) 77%
+    );
+    margin-top: 1em;
+    padding: 0.2em 2em;
+    background-blend-mode: screen;
+    box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+form {
+    margin: 0 auto;
+}
+
+form textarea {
+    font-family: "Spline Sans Mono";
+    font-weight: 400;
+    width: 99%;
+    height: 15em;
+    opacity: 65%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+input[type=button] {
+    padding: 0.5em 1em;
+    background: rgb(147,202,220);
+    background: linear-gradient(180deg, var(--hr_grad_1) 5%, var(--hr_grad_2) 46%, var(--hr_grad_3) 100%);
+    font-weight: 500;
+    color:azure;
+    border-style: solid;
+    border-color: var(--hr_grad_2);
+    border-width: 1px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 20%);
+    cursor: pointer;
+    filter: brightness(1);
+    transition: filter 0.2s;
+}
+
+input[type=button]:hover {
+    filter: brightness(1.25);
+}
+
+input[type=button]:active {
+    filter: contrast(2);
+}
+
+footer {
+    text-align: center;
+    border: 0px solid rgba(100, 100, 100, 1);
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(
+      50deg,
+      rgba(255, 255, 255, 0.5) 12%,
+      rgba(255, 255, 255, 0.3) 77%
+    );
+    margin: 1.5em 1em 0 1em;
+    padding: 1px 0;
+    background-blend-mode: screen;
+    box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer a {
+    font-weight: 500;
+    color: var(--hr_grad_2);
+    text-decoration: none;
+    transition: filter 0.2s;
+}
+
+footer a:hover {
+    filter: brightness(1.25);
+}

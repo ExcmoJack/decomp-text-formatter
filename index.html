@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decomp Text Formatter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+    <header>
+        <h1>
+            <img class="logo" src="images/speech-bubble-icon.svg" /> 
+            Decomp Text Formatter</h1>
+    </header>
+    <main>
+        <section id="desc">
+            <h2>What this is for?</h2>
+            <p>
+                Use this to format a huge plain text into the format Decomp has. Despite poryscript also has a 'format' command,
+                it doesn't necessarily adjusts to what developers need to use, for example, they edited the font width or etc.
+            </p>
+            <h2>How does it works?</h2>
+            <p>
+                Just write down in the Input Text box the whole text you want to convert and then clic on Process. Keep in mind that:
+                <ul>
+                    <li>If you don't know what Output format to choose, leave the default values, as it's the default for pokeemerald too.</li>
+                    <li>Escape characters and variables such as {PLAYER} won't be managed at all and they will treated as text.</li>
+                    <li>Also, special characters as emojis or symbols will be treated as text too, but probably the game will throw an error when compiling.</li>
+                </ul>
+            </p>
+        </section>
+        <section id="user-text-area">
+            <form id="mainAppUI" name="mainAppUI">
+                <h2>Input text</h2>
+                <p>
+                    <textarea required id="userTextBox"></textarea>
+                </p>
+                <fieldset>
+                    <legend>Output format</legend>
+                    <p>
+                        <label for="lineLength">Line length:</label>
+                        <input type="number" id="lineLength" name="lineLength" required min="0" value="38">
+                    </p>
+                    <p>
+                        <input type="radio" id="poryasm" name="outputFormatOption" value="poryasm" checked>
+                        <label for="poryasm">Poryasm (pokeemerald's default)</label>
+
+                        <input type="radio" id="poryscript" name="outputFormatOption" value="poryscript">
+                        <label for="poryscript">Poryscript</label>
+                    </p>
+                </fieldset>
+                <p class="button-container">
+                    <input type="button" id="processButton" name="processButton" value="Process"></input>
+                </p>
+                <h2>Result</h2>
+                <p>
+                    <textarea readonly id="resultTextBox"></textarea>
+                </p>
+                <p class="button-container">
+                    <input type="button" id="copyButton" name="copyButton" value="Copy to clipboard"></input>
+                </p>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://excmojack.github.io/decomp-text-formatter/">Decomp text formatter</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/ExcmoJack">ExcmoJack</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p> 
+    </footer>
+    
+    <script src="scripts.js"></script>
+
+</body>
+</html>
