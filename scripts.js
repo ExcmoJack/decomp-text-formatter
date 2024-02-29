@@ -38,7 +38,6 @@ class Text {
      */
     processText (text) {
         let i;
-        let startedBox = false;
         let textLines = text.split('\n');
         let textResult = "";
 
@@ -50,11 +49,15 @@ class Text {
             else {
                 textResult = textResult.slice(0, -4);
                 textResult += "\\p\"\n";
-                startedBox = false;
+                this.#lineEndsWithL = false;
             }
         }
         textResult = textResult.slice(0, -5);
+        if (this.#format == 0) {
+            textResult += "$";
+        }
         textResult += "\"";
+        
         this.content = textResult;
     }
 
@@ -100,7 +103,9 @@ class Text {
             }
         }
         // Remove the last space from the resulting content and append an End Of Line (EOL).
-        resultingText = resultingText.slice(0, -1);
+        if(resultingText[resultingText.length - 1] == ' '){
+            resultingText = resultingText.slice(0, -1);
+        }
         resultingText += this.#lineEndsWithL ? '\\l\"\n' : '\\n\"\n';
 
         // Send the resulting text to the processText function.
