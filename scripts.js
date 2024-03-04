@@ -52,7 +52,7 @@ class Text {
                 this.#lineEndsWithL = false;
             }
         }
-        textResult = textResult.slice(0, -5);
+        textResult = textResult.slice(0, -4);
         if (this.#format == 0) {
             textResult += "$";
         }
